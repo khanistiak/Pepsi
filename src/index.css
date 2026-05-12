@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-pepsi-blue: #004B93;
+  --color-pepsi-red: #E32934;
+  --color-pepsi-navy: #001E4D;
+  --color-pepsi-light: #00A6E1;
+  
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+}
+
+@layer base {
+  body {
+    @apply bg-pepsi-navy text-white font-sans antialiased selection:bg-pepsi-red selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-pepsi-blue hover:bg-pepsi-light text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-pepsi-blue/50 flex items-center justify-center gap-2 uppercase tracking-wider;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-white/20 hover:border-white text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 uppercase tracking-wider bg-white/5 backdrop-blur-sm;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-500;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24 md:py-32;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/60;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-pepsi-navy;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full hover:bg-white/30 transition-colors;
+}
+
+/* Hide focus rings for non-keyboard users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  @apply outline-2 outline-pepsi-light outline-offset-2;
+}

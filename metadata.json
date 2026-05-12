@@ -1,0 +1,13 @@
+{
+  "name": "Pepsi: Refresh Your World",
+  "description": "A premium, high-converting marketing website for Pepsi featuring immersive products, interactive store locator, and bold brand storytelling.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Interactive product showcases",
+    "Store locator with real-time maps",
+    "High-performance animations",
+    "Lead capture and marketing integrations"
+  ]
+}
